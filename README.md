@@ -1,139 +1,257 @@
-# 📊 Customer Churn Analysis Dashboard (Power BI)
+# 🚗 Cars24 Used Cars Web Scraping & Data Extraction
 
-![Power
-BI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?logo=powerbi&logoColor=black)
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
+![Selenium](https://img.shields.io/badge/Selenium-Web_Automation-green?logo=selenium)
+![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-Web_Scraping-orange)
+![Pandas](https://img.shields.io/badge/Pandas-Data_Processing-150458?logo=pandas)
 ![Status](https://img.shields.io/badge/Project-Completed-success)
-![License](https://img.shields.io/badge/License-MIT-blue)
 
-## 📖 Overview
+---
 
-The **Customer Churn Analysis Dashboard** is an interactive Business
-Intelligence project developed using **Microsoft Power BI**. The
-dashboard analyzes customer behavior, identifies factors contributing to
-churn, and provides actionable insights to improve customer retention
-and business performance.
+# 📖 Overview
 
-## 🎯 Objectives
+This project automates the collection of used car listings from the **Cars24** website using **Selenium** and **BeautifulSoup**. It extracts vehicle details from multiple city listings, performs data cleaning, and prepares a structured dataset for further analysis and machine learning applications.
 
--   Analyze customer churn patterns.
--   Identify key drivers behind customer attrition.
--   Monitor retained and lost revenue.
--   Understand the impact of contracts, billing methods, and
-    demographics.
--   Evaluate service subscription behavior.
--   Enable interactive business reporting.
+The scraper simulates browser interactions to load dynamic content, parses the webpage, and extracts key vehicle information into a consolidated dataset.
 
-## 🛠️ Tools & Technologies
+---
 
--   Microsoft Power BI
--   Power Query
--   DAX (Data Analysis Expressions)
--   Data Modeling
--   Data Visualization
+# 🎯 Objectives
 
-## 📂 Dashboard Pages
+- Automate the scraping of Cars24 used car listings.
+- Collect data from multiple cities.
+- Extract important vehicle attributes.
+- Clean and preprocess the scraped data.
+- Create a structured dataset for analysis.
+- Build a reusable scraping pipeline.
 
-### 1. Churn Prediction & Key Drivers
+---
 
--   KPIs: Churn Rate, Retained Revenue, Lost Revenue
--   Highlights:
-    -   Overall churn rate: **27%**
-    -   Retained Revenue: **13.19M**
-    -   Lost Revenue: **2.86M**
-    -   Month-to-Month contracts have the highest churn.
-    -   Two-Year contracts have the lowest churn.
+# 🌍 Cities Covered
 
-### 2. Contract & Billing Insights
+- Delhi NCR
+- Bangalore
+- Hyderabad
+- Chennai
+- Ahmedabad
+- Gurgaon
+- Mumbai
+- Pune
 
--   KPIs: Total Customers, Churned Customers, Churn Rate, Average
-    Monthly Charges, Average Total Charges
--   Insights:
-    -   Electronic Check customers show the highest churn.
-    -   Longer contracts improve retention.
-    -   Paperless billing customers churn more frequently.
+---
 
-### 3. Customer Demographics Analysis
+# 📊 Features Extracted
 
--   KPIs: Total Customers, Churned Customers, Churn Rate, Average
-    Monthly Charges, Average Tenure
--   Insights:
-    -   Short-tenure customers are more likely to churn.
-    -   Senior citizens have relatively higher churn.
-    -   Churn decreases with increasing tenure.
+The scraper collects the following information for each vehicle:
 
-### 4. Service Subscription Analysis
+| Feature | Description |
+|----------|-------------|
+| Car Name | Vehicle model name |
+| Variant | Vehicle variant |
+| Price | Selling price |
+| EMI Per Month | Estimated monthly EMI |
+| Driven Kilometers | Distance driven |
+| Engine Type | Petrol / Diesel / CNG / Electric |
+| Transmission | Manual / Automatic |
+| Registration Number Type | Registration details |
+| Location | City |
+| Status | Vehicle availability |
 
--   KPIs: Churned Customers, Churn Rate, Streaming Movies Churn,
-    Streaming TV Churn
--   Insights:
-    -   Fiber Optic customers have higher churn.
-    -   Customers with more subscribed services tend to stay longer.
+---
 
-## 📊 Dataset
+# ⚙️ Tech Stack
 
-  -----------------------------------------------------------------------
-  Attribute                               Details
-  --------------------------------------- -------------------------------
-  Records                                 7,043 Customers
+- Python
+- Selenium
+- BeautifulSoup
+- Pandas
+- NumPy
+- Regular Expressions
+- ChromeDriver
+- WebDriver Manager
 
-  Target                                  Churn
+---
 
-  Features                                Gender, Senior Citizen,
-                                          Contract, Payment Method,
-                                          Internet Service, Tenure,
-                                          Monthly Charges, Total Charges,
-                                          Service Features
-  -----------------------------------------------------------------------
+# 📂 Project Workflow
 
-## 📁 Project Structure
-
-``` text
-Customer-Churn-PowerBI/
-│
-├── Customer_Churn.pbix
-├── Dataset/
-├── Images/
-│   ├── Churn_prediction_&_Key_Drivers.png
-│   ├── Contract_&_Billing.png
-│   ├── Customer_Demographics.png
-│   └── Service_subcriptions.png
-├── README.md
-└── LICENSE
+```
+Cars24 Website
+        │
+        ▼
+ Selenium Browser Automation
+        │
+        ▼
+ Dynamic Page Rendering
+        │
+        ▼
+ HTML Source Collection
+        │
+        ▼
+ BeautifulSoup Parsing
+        │
+        ▼
+ Data Extraction
+        │
+        ▼
+ Data Cleaning
+        │
+        ▼
+ Pandas DataFrame
+        │
+        ▼
+ CSV Dataset
 ```
 
-## 📷 Dashboard Preview
+---
 
-### Churn Prediction & Key Drivers
+# 📁 Project Structure
 
-![Dashboard 1](Images/Churn_prediction_&_Key_Drivers.png)
+```text
+Cars24-Web-Scraping/
+│
+├── cars24_main.ipynb
+├── html_files/
+│   ├── delhi.html
+│   ├── bangalore.html
+│   ├── hyderabad.html
+│   ├── chennai.html
+│   ├── ahmedabad.html
+│   ├── gurgaon.html
+│   ├── mumbai.html
+│   └── pune.html
+│
+├── Dataset/
+│   └── cars24_dataset.csv
+│
+├── requirements.txt
+└── README.md
+```
 
-### Contract & Billing Insights
+---
 
-![Dashboard 2](Images/Contract_&_Billing.png)
+# 🔍 Workflow
 
-### Customer Demographics Analysis
+### Step 1
 
-![Dashboard 3](Images/Customer_Demographics.png)
+Render Cars24 webpages using Selenium.
 
-### Service Subscription Analysis
+### Step 2
 
-![Dashboard 4](Images/Service_subcriptions.png)
+Wait until all dynamic vehicle cards are loaded.
 
-## 🚀 Future Improvements
+### Step 3
 
--   Machine Learning-based Churn Prediction
--   Real-time dashboard refresh
--   Customer Segmentation
--   Mobile-optimized dashboard
+Save webpage HTML for each city.
 
-## 💼 Skills Demonstrated
+### Step 4
 
-Power BI • DAX • Power Query • Data Modeling • Dashboard Design • KPI
-Development • Business Intelligence • Customer Analytics • Data
-Storytelling
+Parse HTML using BeautifulSoup.
 
-## 👨‍💻 Author
+### Step 5
+
+Extract vehicle information.
+
+### Step 6
+
+Clean missing and inconsistent values.
+
+### Step 7
+
+Merge all city datasets.
+
+### Step 8
+
+Export the final dataset into CSV format.
+
+---
+
+# 📦 Python Libraries
+
+```python
+beautifulsoup4
+selenium
+webdriver-manager
+pandas
+numpy
+matplotlib
+seaborn
+```
+
+Install using:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# 🚀 How to Run
+
+Clone the repository:
+
+```bash
+git clone https://github.com/BHARGAVPRAVEEN-CHINTAPALLI/Cars42-EDA-Web-Scrapping.git
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the notebook:
+
+```bash
+jupyter notebook cars24_main.ipynb
+```
+
+---
+
+# 📈 Applications
+
+- Used Car Price Analysis
+- Market Research
+- Data Analytics
+- Machine Learning
+- Vehicle Price Prediction
+- Exploratory Data Analysis
+- Dashboard Development
+
+---
+
+# 💡 Future Improvements
+
+- Automated pagination
+- Scheduled scraping
+- Parallel scraping
+- Database integration
+- API development
+- Power BI dashboard
+- Machine Learning price prediction
+
+---
+
+# 🛠 Skills Demonstrated
+
+- Web Scraping
+- Browser Automation
+- Data Cleaning
+- Data Extraction
+- BeautifulSoup
+- Selenium
+- Python Programming
+- Pandas
+- Data Processing
+- Data Collection Pipeline
+
+---
+
+# 👨‍💻 Author
 
 **Bhargav Praveen**
 
-Data Analyst \| Power BI Developer \| Data Science Enthusiast
+Data Analyst | Data Science Enthusiast | Python Developer
+
+---
+
+## ⭐ If you found this project useful, consider giving it a Star on GitHub!
